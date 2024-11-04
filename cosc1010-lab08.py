@@ -24,7 +24,7 @@ def check_type(string_to_check):
     return returnvalue
 
 
-print(check_type("12.0"))
+print(check_type("x"))
 
 
 
@@ -68,7 +68,7 @@ def slope_intercept(m, b, a, an):
     return y_array
 
 while True:
-    a = input("Give me a lower x bound\n")
+    a = input("Give me a lower x bound\n") # Clean these up using in behind each of these and putting them in the right order
     an = input("Give me an upper x bound\n")
     m = input("Give me a slope value\n")
     b = input("Give me the Y Intercept/b value\n")
@@ -95,3 +95,5 @@ print("*" * 75)
 # Create a loop like above to prompt the user for input for the three values
 # Create a second function that just does the square root operation 
     # If the number you are trying to take the square root of is negative, return null
+
+def quadratic_formula(a, b, c):
