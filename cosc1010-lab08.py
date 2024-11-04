@@ -96,4 +96,16 @@ print("*" * 75)
 # Create a second function that just does the square root operation 
     # If the number you are trying to take the square root of is negative, return null
 
-def quadratic_formula(a, b, c):
+def quadratic_formula(a_quad, b_quad, c_quad):
+     if (check_type(a_quad) and check_type(b_quad) and check_type(c_quad)) == int:
+            ((-b_quad) + () ** 0.5)/ (2*a_quad) ## nothing past here is for the code
+            y_array.append(y)
+    else:
+        m = int(m)
+        b = int(b)
+        a = int(a)
+        an = int(an)
+        for x in range(a, an):
+            y = (m * x) + (b)
+            y_array.append(y)
+    return y_array
