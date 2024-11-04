@@ -1,8 +1,8 @@
-# Your Name Here
+# Ian Bullard
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section:
+# Submission Date 11/04/24
+# Lab 08
+# Lab Section: 14
 # Sources, people worked with, help given to:
 # your
 # comments
@@ -13,6 +13,19 @@
 # If they can't be converted return false
 # Other wise return the converted int or float 
 # Floats should only have one decimal point in them 
+
+def check_type(string_to_check):
+    returnvalue = False
+    try:
+        returnvalue = float(string_to_check)
+        returnvalue = int(string_to_check)
+    except:
+        pass
+    return returnvalue
+
+
+print(check_type("12.0"))
+
 
 
 print("*" * 75)
@@ -37,6 +50,40 @@ print("*" * 75)
 # Exit on the word exit
 # Remember all inputs are strings, but the function needs ints or floats
 # Call your function and print the resulting list
+
+def slope_intercept(m, b, a, an):
+    y_array = []
+    if (check_type(m) and check_type(b) and check_type(a) and check_type(an)) == int:
+        for x in range(a, an + 1):
+            y = (m * x) + (b)
+            y_array.append(y)
+    else:
+        m = int(m)
+        b = int(b)
+        a = int(a)
+        an = int(an)
+        for x in range(a, an):
+            y = (m * x) + (b)
+            y_array.append(y)
+    return y_array
+
+while True:
+    a = input("Give me a lower x bound\n")
+    an = input("Give me an upper x bound\n")
+    m = input("Give me a slope value\n")
+    b = input("Give me the Y Intercept/b value\n")
+    
+    a = a.lower()
+    an = an.lower()
+    m = m.lower()
+    b = b.lower()
+
+    if a == "exit" or an == "exit" or m == "exit" or b == "exit":
+        break
+    else:
+        print(slope_intercept(m, b, a, an))
+    
+
 
 print("*" * 75)
 
