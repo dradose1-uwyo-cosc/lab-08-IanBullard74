@@ -68,10 +68,10 @@ def slope_intercept(m, b, a, an):
     return y_array
 
 while True:
-    a = input("Give me a lower x bound\n") # Clean these up using in behind each of these and putting them in the right order
-    an = input("Give me an upper x bound\n")
-    m = input("Give me a slope value\n")
-    b = input("Give me the Y Intercept/b value\n")
+    a = input("Give me a lower x bound or enter exit to exit\n") # Clean these up using in behind each of these and putting them in the right order
+    an = input("Give me an upper x bound or enter exit to exit\n")
+    m = input("Give me a slope value or enter exit to exit\n")
+    b = input("Give me the Y Intercept/b value or enter exit to exit\n")
     
     a = a.lower()
     an = an.lower()
@@ -95,17 +95,34 @@ print("*" * 75)
 # Create a loop like above to prompt the user for input for the three values
 # Create a second function that just does the square root operation 
     # If the number you are trying to take the square root of is negative, return null
-
 def quadratic_formula(a_quad, b_quad, c_quad):
-     if (check_type(a_quad) and check_type(b_quad) and check_type(c_quad)) == int:
-            ((-b_quad) + () ** 0.5)/ (2*a_quad) ## nothing past here is for the code
-            y_array.append(y)
+    if (check_type(a_quad) and check_type(b_quad) and check_type(c_quad)) == int:    
+        quad_sqrt = ((b_quad**2)- (4*(a_quad)*(c_quad)))
+        if quad_sqrt < 0:
+            return "Null"
+        else:
+            positive_solution = ((-b_quad) + (quad_sqrt) ** 0.5)/ (2*a_quad)
+            negative_solution = ((-b_quad) - (quad_sqrt) ** 0.5)/ (2*a_quad)
+            return positive_solution, negative_solution
+            
     else:
-        m = int(m)
-        b = int(b)
-        a = int(a)
-        an = int(an)
-        for x in range(a, an):
-            y = (m * x) + (b)
-            y_array.append(y)
-    return y_array
+        a_quad = int(a_quad)
+        b_quad = int(b_quad)
+        c_quad = int(c_quad)
+        quad_sqrt = ((b_quad**2)- (4*(a_quad)*(c_quad)))
+        if quad_sqrt < 0:
+            return "Null"
+        else:
+            positive_solution = ((-b_quad) + (quad_sqrt) ** 0.5)/ (2*a_quad)
+            negative_solution = ((-b_quad) - (quad_sqrt) ** 0.5)/ (2*a_quad)
+            return positive_solution, negative_solution
+    
+while True:
+    a_quad = input("Input an a value or enter exit to exit\n")
+    b_quad = input("Input an b value or enter exit to exit\n")
+    c_quad = input("Input an c value or enter exit to exit\n")
+
+    if a_quad == "exit" or b_quad == "exit" or c_quad == "exit":
+        break
+    else:
+        print(quadratic_formula(a_quad, b_quad, c_quad))
